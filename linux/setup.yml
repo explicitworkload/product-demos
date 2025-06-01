@@ -300,7 +300,7 @@ controller_templates:
           variable: _hosts
           required: true
 
-  - name: "LINUX / jg-test"
+  - name: "LINUX / jg"
     job_type: run
     inventory: "Demo Inventory"
     project: "Ansible Product Demos"
