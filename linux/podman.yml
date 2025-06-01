@@ -32,7 +32,7 @@
         volume:
           - "./{{ volume_path }}/:/usr/local/apache2/htdocs:z"
         ports:
-          - "8081:80"
+          - "80:80"
 
     - name: Check Web Page
       ansible.builtin.uri:
