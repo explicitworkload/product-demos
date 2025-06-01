@@ -6,8 +6,8 @@
     message: undef
 
   tasks:
-    - name: Install Podman
+    - name: Delete Podman
       ansible.builtin.dnf:
         name: podman
-        state: installed
+        state: absent
       become: true
