@@ -11,16 +11,20 @@
 #      ansible.builtin.reboot:
 #        reboot_timeout: 600
 
-    - name: Reboot the machine via shell
-      ansible.builtin.shell: |
-        sleep 2 && /sbin/shutdown -r now "Reboot triggered by Ansible"
-      async: 1
-      poll: 0
+    - name: Reboot system asynchronously
+      ansible.builtin.shell: sleep 2 && /sbin/shutdown -r now "Reboot by Ansible"
+      async: 60
+      poll: 5
       ignore_errors: true
 
-    - name: Wait a bit for reboot to trigger (optional)
-      ansible.builtin.pause:
-        seconds: 5
+    - name: Wait for system to become reachable again (up to 5 minutes)
+      ansible.builtin.wait_for_connection:
+        delay: 10           # Wait 10 seconds before first check
+        timeout: 300        # Total wait time = 5 minutes
+      register: wait_result
+      retries: 3
+      delay: 10             # Retry every 10 seconds
+      until: wait_result is success
 
     - name: Create an empty file after triggering reboot
       ansible.builtin.file:
