@@ -257,7 +257,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
     survey_enabled: true
     survey:
       name: ''
@@ -289,7 +289,34 @@ controller_templates:
       selinux_policy: targeted
       selinux_state: enforcing
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          required: true
+
+  - name: "LINUX / jg-test"
+    job_type: run
+    inventory: "Demo Inventory"
+    project: "Ansible Product Demos"
+    playbook: "linux/jg-test.yml"
+    notification_templates_started: Telemetry
+    notification_templates_success: Telemetry
+    notification_templates_error: Telemetry
+    diff_mode: true
+    ask_job_type_on_launch: true
+    extra_vars:
+      system_roles:
+        - selinux
+      selinux_policy: targeted
+      selinux_state: enforcing
+    credentials:
+      - "AWS RHEL Credential"
     survey_enabled: true
     survey:
       name: ''
@@ -314,7 +341,7 @@ controller_templates:
       system_roles:
         - cockpit
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
     survey_enabled: true
     survey:
       name: ''
@@ -343,7 +370,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
     extra_vars:
       sudo_remove_nopasswd: false
     survey_enabled: true
@@ -365,7 +392,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
     extra_vars:
       sudo_remove_nopasswd: false
     survey_enabled: true
@@ -501,7 +528,7 @@ controller_templates:
     notification_templates_error: Telemetry
     use_fact_cache: true
     credentials:
-      - "Demo Credential"
+      - "AWS RHEL Credential"
     survey_enabled: true
     survey:
       name: ''
