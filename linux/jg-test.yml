@@ -4,14 +4,9 @@
   vars:
     volume_path: podman
     message: undef
+  become_method: sudo
 
   tasks:
-    - name: Delete Podman
-      ansible.builtin.dnf:
-        name: podman
-        state: absent
-      become: true
-
     - name: Reboot the system
       ansible.builtin.reboot:
         reboot_timeout: 600
