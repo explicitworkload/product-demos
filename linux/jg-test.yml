@@ -10,3 +10,7 @@
     - name: Reboot the system
       ansible.builtin.reboot:
         reboot_timeout: 600
+
+    - name: Reboot the machine via shell
+      ansible.builtin.shell: |
+        sleep 2 && /sbin/shutdown -r now "Reboot triggered by Ansible"
