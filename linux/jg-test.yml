@@ -7,9 +7,9 @@
   become_method: sudo
 
   tasks:
-    - name: Reboot the system
-      ansible.builtin.reboot:
-        reboot_timeout: 600
+#    - name: Reboot the system
+#      ansible.builtin.reboot:
+#        reboot_timeout: 600
 
     - name: Reboot the machine via shell
       ansible.builtin.shell: |
