@@ -120,6 +120,7 @@ controller_templates:
           variable: create_vm_aws_region
           required: true
           choices:
+            - ap-southeast-1
             - us-east-1
             - us-east-2
             - us-west-1
