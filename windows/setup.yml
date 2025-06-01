@@ -371,7 +371,7 @@ controller_workflows:
           required: true
           default: us-east-2
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2

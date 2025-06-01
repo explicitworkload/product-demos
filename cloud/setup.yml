@@ -16,7 +16,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     extra_vars:
-      aws_region: us-east-1
+      aws_region: ap-southeast-1
       dmz_ssh_key_name: aws-test-key
       priv_network_ssh_key_name: aws-test-key
 
@@ -32,7 +32,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     extra_vars:
-      aws_region: us-east-1
+      aws_region: ap-southeast-1
 
   - name: Cloud / AWS / Create Transit Infrastructure
     job_type: run
@@ -46,7 +46,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     extra_vars:
-      aws_region: us-east-1
+      aws_region: ap-southeast-1
       dmz_ssh_key_name: aws-test-key
       priv_network_ssh_key_name: aws-test-key
 
@@ -62,7 +62,7 @@ controller_templates:
     notification_templates_success: Telemetry
     notification_templates_error: Telemetry
     extra_vars:
-      aws_region: us-east-1
+      aws_region: ap-southeast-1
 
   - name: Cloud / AWS / VPC Report
     job_type: run
@@ -78,7 +78,7 @@ controller_templates:
     notification_templates_error: Telemetry
     extra_vars:
       reports_aws_bucket_name: reports-pd-{{ _deployment_id }}
-      reports_aws_region: "us-east-1"
+      reports_aws_region: "ap-southeast-1"
 
   - name: Cloud / AWS / Tags Report
     job_type: run
@@ -104,7 +104,7 @@ controller_templates:
           variable: create_vm_aws_region
           required: true
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -129,9 +129,9 @@ controller_templates:
           type: multiplechoice
           variable: aws_region
           required: true
-          default: us-east-1
+          default: ap-southeast-1
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -160,9 +160,9 @@ controller_templates:
           type: multiplechoice
           variable: aws_region
           required: true
-          default: us-east-1
+          default: ap-southeast-1
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -225,7 +225,7 @@ controller_workflows:
           variable: create_vm_aws_region
           required: true
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -355,9 +355,9 @@ controller_workflows:
           type: multiplechoice
           variable: aws_region
           required: true
-          default: us-east-1
+          default: ap-southeast-1
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2

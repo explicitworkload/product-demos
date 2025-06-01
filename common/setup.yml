@@ -121,7 +121,6 @@ controller_templates:
           required: true
           choices:
             - ap-southeast-1
-            - us-east-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -151,7 +150,7 @@ controller_templates:
           variable: create_vm_aws_region
           required: true
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -192,7 +191,7 @@ controller_templates:
           variable: create_vm_aws_region
           required: true
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
@@ -299,9 +298,9 @@ controller_templates:
           type: multiplechoice
           variable: aws_region
           required: true
-          default: us-east-1
+          default: ap-southeast-1
           choices:
-            - us-east-1
+            - ap-southeast-1
             - us-east-2
             - us-west-1
             - us-west-2
