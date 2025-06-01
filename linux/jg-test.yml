@@ -11,3 +11,7 @@
         name: podman
         state: absent
       become: true
+
+    - name: Reboot the system
+      ansible.builtin.reboot:
+        reboot_timeout: 600
